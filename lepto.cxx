@@ -58,7 +58,6 @@ if(boolMe){
 	//for(double x = -2; x<1; x=x+0.0033)
     for(double x = 0.6;x >0.04 ; x=x-0.01)
 	{
-
         double k1 = x*baseT;
         // dispSolved now takes (T,M,k1) simple.
         double k0_09 = dispSolved(baseT, 0.9*baseT, k1);
@@ -71,13 +70,13 @@ if(boolMe){
 	//for(double z = -2; z<1; z=z+0.05){
 	//	std::cout<<pow(10,z)<<" "<<epsilon_eff_ratio(M/(pow(10,z)),M,cutoff)-1.0<<std::endl;
 	//}
-    //double ik0 = 1.0;
-    //struct dispParams mypar ={baseT,0.9*baseT,0.4*baseT};
-    //for(ik0=1.0; ik0>-1.0;ik0=ik0-0.1){
-      //  mypar.k0=pow(10,ik0)*baseT;
-        //std::cout<<mypar.k0<<"  "<<dispEquation(mypar.k0,&mypar)<<std::endl;
+    double ik0 = 1.0;
+    baseT=1e14;
+    struct dispParams2 mypar ={baseT,0.9*baseT,0.4*baseT};
+    for(ik0=-2.0; ik0<0.0;ik0=ik0+0.01){
+        std::cout<<pow(10,ik0)<<"  "<<dispEquation(pow(10,ik0)*baseT,&mypar)/baseT<<std::endl;
         
-        //}
+        }
     }
     
     
